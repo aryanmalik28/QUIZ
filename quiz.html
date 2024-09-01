@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Creation Form</title>
+  <link rel="stylesheet" href="quiz.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+
+</head>
+<body class="bg-gray-900  py-10 px-4 ">
+  <div class="bg-gray-400  max-w-xl mx-auto p-6 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold text-center mb-6 text-red-900">Create a New Quiz</h1>
+    
+    <form id="quizForm" class="space-y-4">
+      <div >
+        <label for="quizTitle" class="block text-lg font-medium text-gray-700">Quiz Title</label>
+        <input type="text" id="quizTitle" name="quizTitle" required
+               class="w-1/2 px-4 py-2 mt-1   border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 opacity"
+               placeholder="Enter the quiz title">
+        
+      </div>
+      <div>
+        <label for="quizTitle" class="block text-lg font-medium text-gray-700">Quiz Time </label>
+        <input type="text" id="quizTitle" name="quizTitle" required
+               class="w-1/2 px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 opacity"
+               placeholder="Enter the time for quiz ">
+      </div><br>
+
+      <div id="questionsContainer">
+        <div class="question-item mb-6" data-question-index="0">
+          <label class="block text-lg font-medium text-gray-700">Question 1</label>
+
+          <div>
+            <label for="questionType0" class="block mt-2 text-md font-medium text-gray-700">Question Type</label>
+            <select id="questionType0" name="questionType0" required
+                    class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+              <option value="multiple-choice">Multiple Choice</option>
+              <option value="explain">Explain</option>
+              <option value="true-false">True/False</option>
+            </select>
+          </div>
+
+          <textarea name="question0" required
+                    class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Enter the question"></textarea>
+
+          <div class="mt-4" id="optionsContainer0">
+            <label class="block text-md font-medium text-gray-700">Answer Options</label>
+            <div class="space-y-2 mt-2">
+              <input type="text" name="option0-1" required
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                     placeholder="Option A">
+              <input type="text" name="option0-2" required
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                     placeholder="Option B">
+              <input type="text" name="option0-3"
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                     placeholder="Option C">
+              <input type="text" name="option0-4"
+                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                     placeholder="Option D">
+            </div>
+
+            <label for="correctAnswer0" class="block mt-4 text-md font-medium text-gray-700">Correct Answer</label>
+            <select name="correctAnswer0" required
+                    class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+              <option value="option0-1">Option A</option>
+              <option value="option0-2">Option B</option>
+              <option value="option0-3">Option C</option>
+              <option value="option0-4">Option D</option>
+            </select>
+          </div>
+
+          <div class="mt-4 hidden" id="explainContainer0">
+            <label for="explainAnswer0" class="block text-md font-medium text-gray-700">Answer</label>
+            <textarea id="explainAnswer0" name="explainAnswer0"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="Provide a model answer"></textarea>
+          </div>
+
+          <div class="mt-4 hidden" id="trueFalseContainer0">
+            <label for="trueFalseAnswer0" class="block text-md font-medium text-gray-700">Answer</label>
+            <select id="trueFalseAnswer0" name="trueFalseAnswer0" required
+                    class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button type="button" id="addQuestionBtn" class="text-red-600 hover:underline">+ Add Another Question</button>
+        <button type="submit" class="px-6 py-2  submit  text-white rounded-md  transition">
+          Submit Quiz
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
